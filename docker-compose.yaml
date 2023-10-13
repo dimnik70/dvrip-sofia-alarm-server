@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  sofia:
+    container_name: sofia
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped  
+    ports:
+      - ${PORT}:${PORT}
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
