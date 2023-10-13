@@ -77,9 +77,9 @@ class AlarmServer {
       const event = jsonData.Event;
       const serialID = jsonData.SerialID;
       this.log.log_info(`${event_type} Serial: ${serialID}; Event: ${event}`);
-      //   if (event_type === "Alarm") {
-      //     this.publisher.publish(serialID, event);
-      //   }
+      if (event_type === "Alarm") {
+        this.publisher.publish(serialID, event);
+      }
     });
   }
 
